@@ -1,0 +1,39 @@
+/* Import Google fonts */ 
+@import url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400&family=Outfit:wght@200;300&display=swap');
+
+/* Global style */
+
+body {
+    font-family: "Outfit", sans-serif;
+    font-weight: 200;
+    color: #3a3a3a; 
+    background-color: #fffae8;
+}
+
+/* Headings, header and logo style */ 
+
+h1, h2 {
+    font-family: "Mitr", sans-serif;
+    font-weight: 400;
+}
+
+#header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header-content {
+    display: flex;
+}
+
+.header-icon {
+    font-size: 300%;
+}
+
+.header-content a {
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
