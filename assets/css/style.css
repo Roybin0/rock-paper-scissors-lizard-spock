@@ -7,12 +7,12 @@ body {
     font-family: "Outfit", sans-serif;
     font-weight: 200;
     color: #3a3a3a; 
-    background-color: #fffae8;
+    background-color: #F1F0F1;
 }
 
 /* Headings, header and logo style */ 
 
-h1, h2 {
+h1, h2, h3 {
     font-family: "Mitr", sans-serif;
     font-weight: 400;
 }
@@ -42,16 +42,28 @@ h1, h2 {
 #intro-container {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 }
 
 .intro-content {
     width: 30%;
+    height: 500px;
+
     display: flex;
     flex-direction: column;
-    padding: 0 15px;
-    background-color: #E3F5FF;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0px 5px;
+
+    border-radius: 10%;
+    background-color: #9AC8C9;
+}
+
+.intro-content ul {
+    list-style-type: none;
+    padding: 0px;
 }
 
 #image-container {
@@ -62,4 +74,133 @@ h1, h2 {
 #main-image {
     width: 100%;
     height: 100%;
+}
+
+/* Game section style */
+
+#game-container {
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Game button colours */
+
+:root {
+    --rock-light: #F6D6FF;
+    --paper-light: #FEF6D4;
+    --scissors-light: #FFD6D6;
+    --lizard-light: #D8F3D8;
+    --spock-light: #D5E5FF; 
+
+    --rock-bright: #E999FF; 
+    --paper-bright: #FFE679; 
+    --scissors-bright: #FF8D8D; 
+    --lizard-bright: #8CF68C; 
+    --spock-bright: #84B3FF; 
+}
+
+.rock {
+    background-color: var(--rock-light);
+    border: 3px solid var(--rock-bright);
+}
+
+.rock:hover {
+    background-color: var(--rock-bright);
+    border: 3px solid var(--rock-light);
+}
+
+.paper {
+    background-color: var(--paper-light);
+    border: 3px solid var(--paper-bright);
+    position: relative;
+    top: -70px;
+}
+
+.paper:hover {
+    background-color: var(--paper-bright);
+    border: 3px solid var(--paper-light);
+}
+
+.scissors {
+    background-color: var(--scissors-light);
+    border: 3px solid var(--scissors-bright);
+}
+
+.scissors:hover {
+    background-color: var(--scissors-bright);
+    border: 3px solid var(--scissors-light);
+}
+
+.lizard {
+    background-color: var(--lizard-light);
+    border: 3px solid var(--lizard-bright);
+}
+
+.lizard:hover {
+    background-color: var(--lizard-bright);
+    border: 3px solid var(--lizard-light);
+}
+
+.spock {
+    background-color: var(--spock-light);
+    border: 3px solid var(--spock-bright);
+}
+
+.spock:hover {
+    background-color: var(--spock-bright);
+    border: 3px solid var(--spock-light);
+}
+
+/* Game button style */ 
+
+button {
+    font-family: "Outfit", sans-serif;
+}
+
+.game-choices {
+    max-width: 470px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 50px;
+}
+
+.game-icon {
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 125%;
+    text-align: center;
+
+    padding: 25px 20px;
+    border-radius: 50%;
+}
+
+/* Start button style */
+
+#start {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-text { 
+    text-align: center;
 }

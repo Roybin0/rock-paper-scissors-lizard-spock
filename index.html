@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
 
-    <title>Rock to Spock!</title>
+    <title>Rock. Paper, Scissors, Lizard, Spock!</title>
 
 </head>
 
@@ -35,18 +35,20 @@
 
             <h2>Introduction</h2>
 
-            <p>Everyone knows how to play Rock, Paper, Scissors, but have you ever played <strong>Rock, Paper, Scissors, Lizard, Spock</strong>? It goes like this:</p>
-                <p>Scissors cuts paper, <br> 
-                paper covers rock, <br>
-                rock crushes lizard, <br>
-                lizard poisons Spock, <br>
-                Spock smashes scissors, <br>
-                scissors decapitates lizard, <br>
-                lizard eats paper, <br>
-                paper disproves Spock, <br>
-                Spock vaporizes rock, <br>
-                and as it always has, rock crushes scissors.</p>
- 
+            <p>Rock, Paper, Scissors with a twist! Have you ever played <strong>Rock, Paper, Scissors, Lizard, Spock</strong>? It goes like this:</p>
+                
+            <ul>
+                <li><strong>Scissors</strong> cuts <strong>Paper</strong>,</li> 
+                <li><strong>Paper</strong> covers <strong>Rock</strong>,</li>
+                <li><strong>Rock</strong> crushes <strong>Lizard</strong>,</li>
+                <li><strong>Lizard</strong> poisons <strong>Spock</strong>,</li>
+                <li><strong>Spock</strong> smashes <strong>Scissors</strong>,</li>
+                <li><strong>Scissors</strong> decapitates <strong>Lizard</strong>,</li>
+                <li><strong>Lizard</strong> eats <strong>Paper</strong>,</li>
+                <li><strong>Paper</strong> disproves <strong>Spock</strong>,</li>
+                <li><strong>Spock</strong> vaporizes <strong>Rock</strong>,</li>
+                <li>And as it always has done, <strong>Rock</strong> crushes <strong>Scissors</strong>.</p>
+            </ul>
         </div>
 
         <div id="image-container">
@@ -60,20 +62,20 @@
             <h2>How to Play</h2> 
 
             <ol>
-                <li>Click the “Start” button below, or press the “Enter” key on your keyboard. </li><br>
+                <li>Click the “<strong>Start</strong>” button below, or press the “<strong>Enter</strong>” key on your keyboard. </li><br>
                 <li>After the countdown, choose a button onscreen or use the keyboard shortcut: 
                     <ul><br>
-                        <li>Rock: 1</li>
-                        <li>Paper: 2</li>
-                        <li>Scissors: 3</li>
-                        <li>Lizard: 4</li>
-                        <li>Spock: 5</li>
+                        <li><strong>Rock</strong>:  1  or  <i class="fa-regular fa-hand-back-fist"></i></li>
+                        <li><strong>Paper</strong>:  2  or  <i class="fa-regular fa-hand"></i></li>
+                        <li><strong>Scissors</strong>:  3  or  <i class="fa-regular fa-hand-scissors"></i></li>
+                        <li><strong>Lizard</strong>:  4  or  <i class="fa-regular fa-hand-lizard"></i></li>
+                        <li><strong>Spock</strong>:  5  or  <i class="fa-regular fa-hand-spock"></i></li>
                     </ul><br>  
                 </li>
                 <li>The computer will make its choice at the same time as you and the results will be displayed on the screen.</li>
             </ol>
 
-            <p>May the best person win!</p>
+            <h3>Good luck!</h3>
 
         </div>
 
@@ -81,28 +83,47 @@
 
     <section id="game-container">
          
-        <div class="game-content align-left">
+        <div class="game-content">
 
-            <h3>Your score: <span id="your-score">0</span></h3>
+            <h2>Your score: <span id="your-score">0</span></h2>
 
-            <div class="game-choices">
+            <div id="user-choices" class="game-choices">
 
-                <i class="game-icon fa-regular fa-hand-back-fist"></i>
-                <i class="game-icon fa-regular fa-hand"></i>
-                <i class="game-icon fa-regular fa-hand-scissors"></i>
-                <i class="game-icon fa-regular fa-hand-lizard"></i>
-                <i class="game-icon fa-regular fa-hand-spock"></i>
+                <p><button data-type="rock" class="game-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button></p>
+                <p><button data-type="paper" class="game-icon paper"><i class="fa-regular fa-hand"></i>Paper</button></p>
+                <p><button data-type="scissors" class="game-icon scissors"><i class="fa-regular fa-hand-scissors"></i>Scissors</button></p>
+                <p><button data-type="spock" class="game-icon spock"><i class="fa-regular fa-hand-spock"></i>Spock</button></p>
+                <p><button data-type="lizard" class="game-icon lizard"><i class="fa-regular fa-hand-lizard"></i>Lizard</button></p>
+    
+            </div>
+
+        </div>
+
+        <div id="start">
+            
+            <div id="game-text">
+                <h3>Press the START button to begin...</h3>
+            </div>
+            
+            <button data-type="start" id="start-btn">Start!</button>
+        </div>
+
+        <div class="game-content">
+
+            <h2>Computer score: <span id="computer-score">0</span></h2>
+
+            <div id="computer-choices" class="game-choices">
+
+                <p><button data-type="rock" class="game-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button></p>
+                <p><button data-type="paper" class="game-icon paper"><i class="fa-regular fa-hand"></i>Paper</button></p>
+                <p><button data-type="scissors" class="game-icon scissors"><i class="fa-regular fa-hand-scissors"></i>Scissors</button></p>
+                <p><button data-type="spock" class="game-icon spock"><i class="fa-regular fa-hand-spock"></i>Spock</button></p>
+                <p><button data-type="lizard" class="game-icon lizard"><i class="fa-regular fa-hand-lizard"></i>Lizard</button></p>
 
             </div>
 
         </div>
 
-        <div>
-            Computer side
-        </div>
-
-        <div>
-            Start button 
         </div>
 
     </section>
