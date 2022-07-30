@@ -91,6 +91,7 @@ h1, h2, h3 {
     width: 40%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 /* Game button colours */
@@ -101,12 +102,14 @@ h1, h2, h3 {
     --scissors-light: #FFD6D6;
     --lizard-light: #D8F3D8;
     --spock-light: #D5E5FF; 
+    --start-light: #E9D4FC; 
 
     --rock-bright: #E999FF; 
     --paper-bright: #FFE679; 
     --scissors-bright: #FF8D8D; 
     --lizard-bright: #8CF68C; 
     --spock-bright: #84B3FF; 
+    --start-bright: #C489FF; 
 }
 
 .rock {
@@ -203,4 +206,31 @@ button {
 
 #game-text { 
     text-align: center;
+}
+
+#start-btn {
+    font-size: 400%;
+    font-weight: 300;
+
+    background-color: var(--start-light);
+    border: 3px solid var(--start-bright);
+    border-radius: 30%;
+
+    padding: 20px 25px; 
+}
+
+/* Add animation for start button hover */ 
+
+@keyframes start-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+#start-btn:hover {
+    background-color: var(--start-bright);
+    border: 3px solid var(--start-light);
+    animation: start-shake 0.5s linear 0s infinite;
 }
