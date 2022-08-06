@@ -88,15 +88,29 @@
         </div>
     </header>
 
+    <section id="score-container">
+
+        <div class="score-section">
+            <h2><strong>Your score: <span id="your-score">0</span></strong></h2>
+        </div>
+
+        <div class="score-section">
+            <p id="last-result">
+                Previous result: <span id="user-last"><i class="fa-regular fa-hand-scissors fa-beat"></i></span> <span class="how">CUTS</span> <span id="computer-last"><i class="fa-regular fa-hand fa-beat"></i></span>
+            </p>
+        </div>
+
+        <div class="score-section">
+            <h2><strong>Computer score: <span id="computer-score">0</span></strong> </h2>
+        </div>
+
+    </section>
+
     <section id="main-container">
 
         <div class="game-content">
 
-            <div class="score-section">
-                <h2><strong>Your score: <span id="your-score">0</span></strong></h2>
-            </div>
-
-            <div id="user-choices" class="game-choices">
+            <div class="game-choices">
 
                 <p><button data-type="game-choice" id="rock" class="game-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button></p>
                 <p><button data-type="game-choice" id="paper" class="game-icon paper"><i class="fa-regular fa-hand"></i>Paper</button></p>
@@ -109,36 +123,54 @@
         </div>
 
         <div id="main-center">
-    
+
             <div id="image-container">
-                    <img id="main-image" src="assets/images/rock-paper-scissors-lizard-spock.webp" alt="Five small picture of the hand signals for rock, paper, scissors, lizard and Spock">
-            </div>   
-            
+                <img id="main-image" src="assets/images/rock-paper-scissors-lizard-spock.webp" alt="Five small picture of the hand signals for rock, paper, scissors, lizard and Spock">
+            </div>  
+
+            <div id="display-results">
+
+                <div id="display-results-buttons">
+
+                    <div class="display-choices">
+                        <p><strong>You chose:</strong></p>
+                        <p><button id="user-result-button" class="result-button"></button></p>
+                    </div>
+
+                    <div class="display-choices">
+                        <p><strong>Computer chose:</strong></p>
+                        <p><button id="computer-result-button" class="result-button"></button></p>
+                    </div>
+
+                </div>
+
+                <div id="display-results-text">
+                    <h3 id="result-text"></h3>
+                    <p><span id="winner-result-text"></span> <span id="how"> </span> <span id="loser-result-text"></span></p>
+                </div>
+            </div>
+
             <div id="start">
-            
+        
                 <div id="game-text">
                     <p>Press the START button to begin...</p>
                 </div>
-                
+            
                 <button data-type="start" id="start-btn">Start!</button>
-                
+            
             </div>
 
         </div>
 
         <div class="game-content">
 
-            <div class="score-section">
-                <h2><strong>Computer score: <span id="computer-score">0</span></strong> </h2>
-            </div>
+            <div class="game-choices">
 
-            <div id="computer-choices" class="game-choices">
-
-                <p><button data-type="rock" class="game-icon rock computer-choices"><i class="fa-regular fa-hand-back-fist"></i>Rock</button></p>
-                <p><button data-type="paper" class="game-icon paper computer-choices"><i class="fa-regular fa-hand"></i>Paper</button></p>
-                <p><button data-type="scissors" class="game-icon scissors computer-choices"><i class="fa-regular fa-hand-scissors"></i>Scissors</button></p>
-                <p><button data-type="spock" class="game-icon spock computer-choices"><i class="fa-regular fa-hand-spock"></i>Spock</button></p>
-                <p><button data-type="lizard" class="game-icon lizard computer-choices"><i class="fa-regular fa-hand-lizard"></i>Lizard</button></p>
+                <p><button data-type="rock" id="computer-rock" class="game-icon rock computer-choices"><i class="fa-regular fa-hand-back-fist"></i>Rock</button></p>
+                <p><button data-type="paper" id="computer-paper" class="game-icon paper computer-choices"><i class="fa-regular fa-hand"></i>Paper</button></p>
+                <p><button data-type="scissors" id="computer-scissors" class="game-icon scissors computer-choices"><i class="fa-regular fa-hand-scissors"></i>Scissors</button></p>
+                <p><button data-type="spock" id="computer-spock" class="game-icon spock computer-choices"><i class="fa-regular fa-hand-spock"></i>Spock</button></p>
+                <p><button data-type="lizard" id="computer-lizard" class="game-icon lizard computer-choices"><i class="fa-regular fa-hand-lizard"></i>Lizard</button></p>
 
             </div>
 
