@@ -242,6 +242,43 @@ h1, h2, h3 {
     text-align: center;
 }
 
+/* Restart button style */ 
+
+#play-again {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#restart-btn {
+    font-size: 200%;
+    font-weight: 300;
+
+    background-color: var(--start-light);
+    border: 3px solid var(--start-bright);
+    border-radius: 30%;
+
+    padding: 20px 25px; 
+}
+
+/* Add animation for start button hover */ 
+
+@keyframes restart-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+#restart-btn:hover {
+    background-color: var(--start-bright);
+    border: 3px solid var(--start-light);
+    animation: start-shake 0.5s linear 0s infinite;
+}
+
 /* Game area style */
 
 .game-content {

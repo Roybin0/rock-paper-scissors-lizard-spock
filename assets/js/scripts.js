@@ -12,9 +12,11 @@
             } else if (this.getAttribute('data-type') === 'game-choice') {
                 let userChoice = this.getAttribute('id');  
                 checkAnswer(userChoice);
-            } 
-        })
-    }
+            } else if (this.getAttribute('data-type') === 'restart') {
+                restartGame();
+            }
+        });
+    };
 
     var tab = document.getElementsByClassName('tab-links');
     var i;
@@ -32,16 +34,17 @@
         });
     }
 
-    document.getElementById('start-btn').addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             startGame();
         }
     })
 
-    document.getElementById('rock').addEventListener('keydown', function(event) {
+    document.addEventListener('keydown', function(event) {
         if (event.key === '1' ) {
-            let userAnswer = this.getAttribute('id');
-            checkAnswer(userAnswer);
+            checkAnswer('rock');
+        } else if (event.key === '2') {
+            checkAnswer('paper'); 
         }
     })
 
@@ -129,7 +132,6 @@ function displayWinner(userChoice, computerChoice) {
     let resultText = document.getElementById('result-text'); 
 
     document.getElementById('display-results').style.display = 'flex';
-    document.getElementById('start-btn').innerHTML = 'Play again';
     document.getElementById('game-text').style.display = 'none'; 
 
     if (userChoice === 'rock' && computerChoice === 'rock')  {
@@ -141,6 +143,8 @@ function displayWinner(userChoice, computerChoice) {
         loserResult.style.textTransform = 'capitalize';
         how.innerHTML = 'matches';
         resultText.innerHTML = "It's a draw!"
+        incrementUserScore();
+        incrementComputerScore();
     } else if (userChoice === 'rock' && computerChoice === 'paper')  {
         userResultButton.innerHTML = buttonLose[0]; 
         computerResultButton.innerHTML = buttonWin[1]; 
@@ -149,7 +153,8 @@ function displayWinner(userChoice, computerChoice) {
         loserResult.innerHTML = userChoice; 
         loserResult.style.textTransform = 'capitalize';
         how.innerHTML = "covers";
-        resultText.innerHTML = 'Computer wins! Try again!'
+        resultText.innerHTML = 'Computer wins! Try again!';
+        incrementComputerScore();
     } else if (userChoice === 'rock' && computerChoice === 'scissors')  {
         userResultButton.innerHTML = buttonWin[0]; 
         computerResultButton.innerHTML = buttonLose[2]; 
@@ -158,7 +163,8 @@ function displayWinner(userChoice, computerChoice) {
         loserResult.innerHTML = computerChoice; 
         loserResult.style.textTransform = 'capitalize';
         how.innerHTML = "crushes";
-        resultText.innerHTML = 'Congratulations, you win!'
+        resultText.innerHTML = 'Congratulations, you win!';
+        incrementUserScore();
     } else if (userChoice === 'rock' && computerChoice === 'lizard')  {
         userResultButton.innerHTML = buttonWin[0]; 
         computerResultButton.innerHTML = buttonLose[4]; 
@@ -167,7 +173,8 @@ function displayWinner(userChoice, computerChoice) {
         loserResult.innerHTML = computerChoice; 
         loserResult.style.textTransform = 'capitalize';
         how.innerHTML= "crushes";
-        resultText.innerHTML = 'Congratulations, you win!'
+        resultText.innerHTML = 'Congratulations, you win!';
+        incrementUserScore();
     } else if (userChoice === 'rock' && computerChoice === 'spock')  {
         userResultButton.innerHTML = buttonLose[0]; 
         computerResultButton.innerHTML = buttonWin[3]; 
@@ -176,8 +183,63 @@ function displayWinner(userChoice, computerChoice) {
         loserResult.innerHTML = userChoice; 
         loserResult.style.textTransform = 'capitalize';
         how.innerHTML = "vaporizes";
-        resultText.innerHTML = 'Computer wins! Try again!'
+        resultText.innerHTML = 'Computer wins! Try again!';
+        incrementComputerScore();
+    } else if (userChoice === 'paper' && computerChoice === 'paper')  {
+        userResultButton.innerHTML = buttonWin[1]; 
+        computerResultButton.innerHTML = buttonWin[1]; 
+        winnerResult.innerHTML = userChoice; 
+        winnerResult.style.textTransform = 'capitalize';
+        loserResult.innerHTML = computerChoice; 
+        loserResult.style.textTransform = 'capitalize';
+        how.innerHTML = 'matches';
+        resultText.innerHTML = "It's a draw!";
+        incrementUserScore();
+        incrementComputerScore();
+    } else if (userChoice === 'paper' && computerChoice === 'rock')  {
+        userResultButton.innerHTML = buttonWin[1]; 
+        computerResultButton.innerHTML = buttonLose[0]; 
+        winnerResult.innerHTML = userChoice; 
+        winnerResult.style.textTransform = 'capitalize';
+        loserResult.innerHTML = computerChoice; 
+        loserResult.style.textTransform = 'capitalize';
+        how.innerHTML = "covers";
+        resultText.innerHTML = 'Congratulations, you win!';
+        incrementUserScore();
+    } else if (userChoice === 'paper' && computerChoice === 'scissors')  {
+        userResultButton.innerHTML = buttonLose[1]; 
+        computerResultButton.innerHTML = buttonWin[2]; 
+        winnerResult.innerHTML = computerChoice; 
+        winnerResult.style.textTransform = 'capitalize';
+        loserResult.innerHTML = userChoice; 
+        loserResult.style.textTransform = 'capitalize';
+        how.innerHTML = "cuts";
+        resultText.innerHTML = 'Computer wins! Try again!';
+        incrementComputerScore();
+    } else if (userChoice === 'paper' && computerChoice === 'lizard')  {
+        userResultButton.innerHTML = buttonLose[1]; 
+        computerResultButton.innerHTML = buttonWin[4]; 
+        winnerResult.innerHTML = computerChoice; 
+        winnerResult.style.textTransform = 'capitalize';
+        loserResult.innerHTML = userChoice; 
+        loserResult.style.textTransform = 'capitalize';
+        how.innerHTML= "eats";
+        resultText.innerHTML = 'Computer wins! Try again!';
+        incrementComputerScore();
+    } else if (userChoice === 'paper' && computerChoice === 'spock')  {
+        userResultButton.innerHTML = buttonWin[1]; 
+        computerResultButton.innerHTML = buttonLose[3]; 
+        winnerResult.innerHTML = userChoice; 
+        winnerResult.style.textTransform = 'capitalize';
+        loserResult.innerHTML = computerChoice; 
+        loserResult.style.textTransform = 'capitalize';
+        how.innerHTML = "disproves";
+        resultText.innerHTML = 'Congratulations, you win!';
+        incrementUserScore();
     }
+
+    document.getElementById('play-again').style.display = 'flex';
+
 };
 
 function checkAnswer(userChoice) {
@@ -215,6 +277,36 @@ function checkAnswer(userChoice) {
         document.getElementById('computer-lizard').style.backgroundColor = '#8CF68C';
         document.getElementById('computer-lizard').style.borderColor = '#D8F3D8'; 
         displayWinner(userChoice, computerChoice);
+    } else if (userChoice === 'paper' && computerChoice === 'rock') {
+        document.getElementById('paper').style.backgroundColor = '#FFE679';
+        document.getElementById('paper').style.borderColor = '#FEF6D4'; 
+        document.getElementById('computer-rock').style.backgroundColor = '#E999FF';
+        document.getElementById('computer-rock').style.borderColor = '#F6D6FF'; 
+        displayWinner(userChoice, computerChoice);     
+    } else if (userChoice === 'paper' && computerChoice === 'scissors') {
+        document.getElementById('paper').style.backgroundColor = '#FFE679'
+        document.getElementById('paper').style.borderColor = '#FEF6D4'
+        document.getElementById('computer-scissors').style.backgroundColor = '#FF8D8D';
+        document.getElementById('computer-scissors').style.borderColor = '#FFD6D6'; 
+        displayWinner(userChoice, computerChoice);
+    } else if (userChoice === 'paper' && computerChoice === 'paper') {
+        document.getElementById('paper').style.backgroundColor = '#FFE679'
+        document.getElementById('paper').style.borderColor = '#FEF6D4'
+        document.getElementById('computer-paper').style.backgroundColor = '#FFE679';
+        document.getElementById('computer-paper').style.borderColor = '#FEF6D4'; 
+        displayWinner(userChoice, computerChoice);
+    } else if (userChoice === 'rock' && computerChoice === 'spock') {
+        document.getElementById('paper').style.backgroundColor = '#FFE679'
+        document.getElementById('paper').style.borderColor = '#FEF6D4'
+        document.getElementById('computer-spock').style.backgroundColor = '#84B3FF';
+        document.getElementById('computer-spock').style.borderColor = '#D5E5FF'; 
+        displayWinner(userChoice, computerChoice);
+    } else if (userChoice === 'paper' && computerChoice === 'lizard') {
+        document.getElementById('paper').style.backgroundColor = '#FFE679'
+        document.getElementById('paper').style.borderColor = '#FEF6D4'
+        document.getElementById('computer-lizard').style.backgroundColor = '#8CF68C';
+        document.getElementById('computer-lizard').style.borderColor = '#D8F3D8'; 
+        displayWinner(userChoice, computerChoice);
     } else {
         alert(`Unknown game choice: ${userChoice}`);
         throw `Unknown game choice: ${userChoice}. Aborting!`
@@ -227,9 +319,15 @@ function checkAnswer(userChoice) {
 }
 
 function incrementUserScore() {
+
+    let oldScore = parseInt(document.getElementById('your-score').innerText); 
+    document.getElementById('your-score').innerText = ++oldScore;
     
 }
 
 function incrementComputerScore() {
+
+    let oldScore = parseInt(document.getElementById('computer-score').innerText); 
+    document.getElementById('computer-score').innerText = ++oldScore;
 
 }
