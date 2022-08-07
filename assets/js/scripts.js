@@ -114,7 +114,7 @@ function startGame() {
 
     // Ask user to enter their name and update name elements 
     let name = prompt("Enter your name:"); 
-    
+
     if (name != null) {
         document.getElementById('user-name-score').innerHTML = name + "'s";
         document.getElementById('user-name-results').innerHTML = name;
@@ -174,12 +174,42 @@ function previousResults(userChoice, computerChoice) {
     let rowCount = table.rows.length;
     let row = table.insertRow(rowCount); 
 
-
-
     let roundNumber = row.insertCell(0); 
     let round = document.createElement('tr')
-    round.innerHTML = 'Round' + rowCount; 
+    round.innerHTML = 'Round ' + rowCount; 
     roundNumber.appendChild(round); 
+
+    const buttons = [
+        `<button class="result-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button>`,
+        `<button class="result-icon paper-result"><i class="fa-regular fa-hand"></i>Paper</button>`,
+        `<button class="result-icon scissors"><i class="fa-regular fa-hand-scissors"></i>Scissors</button>`,
+        `<button class="result-icon lizard"><i class="fa-regular fa-hand-lizard"></i>Lizard</button>`,
+        `<button class="result-icon spock"><i class="fa-regular fa-hand-spock"></i>Spock</button>`,
+    ];
+
+    if (userChoice === '"rock"') {
+        userChoice = buttons[0]; 
+    } else if (userChoice === '"paper"') {
+        userChoice = buttons[1]; 
+    } else if (userChoice === '"scissors"') {
+        userChoice = buttons[2]; 
+    } else if (userChoice === '"lizard"') {
+        userChoice = buttons[3]; 
+    } else if (userChoice === '"spock"') {
+        userChoice = buttons[4]; 
+    };
+
+    if (computerChoice === '"rock"') {
+        computerChoice = buttons[0]; 
+    } else if (computerChoice === '"paper"') {
+        computerChoice = buttons[1]; 
+    } else if (computerChoice === '"scissors"') {
+        computerChoice = buttons[2]; 
+    } else if (computerChoice === '"lizard"') {
+        computerChoice = buttons[3]; 
+    } else if (computerChoice === '"spock"') {
+        computerChoice = buttons[4]; 
+    };
 
     let userResults = row.insertCell(1); 
     userResults.innerHTML = userChoice; 
@@ -191,8 +221,7 @@ function previousResults(userChoice, computerChoice) {
 
 
 /**
- * Function to display the user and computer choices, 
- * and declare the winner 
+ * Display the user and computer choices and declare the winner 
  */
 
 function displayWinner(userChoice, computerChoice) {  
@@ -491,8 +520,7 @@ function displayWinner(userChoice, computerChoice) {
 };
 
 /**
- * Function to create the computers choice which is passed
- * to the Display Winner function
+ * Create random computer choice which is passed to the displayWinner function
  */
 
 function computerAnswer(userChoice) {
@@ -533,10 +561,10 @@ function computerAnswer(userChoice) {
         document.getElementById('computer-paper').style.backgroundColor = '#FEDD5F';
         document.getElementById('computer-paper').style.borderColor = '#FEF6D4';
     } else if (computerChoice === 'spock') {
-        document.getElementById('computer-spock').style.backgroundColor = '#89DC8B';
+        document.getElementById('computer-spock').style.backgroundColor = '#81B2FA';
         document.getElementById('computer-spock').style.borderColor = '#D5E5FF';
     } else if (computerChoice === 'lizard') {
-        document.getElementById('computer-lizard').style.backgroundColor = '#81B2FA';
+        document.getElementById('computer-lizard').style.backgroundColor = '#89DC8B';
         document.getElementById('computer-lizard').style.borderColor = '#D8F3D8';
     };
 
@@ -546,7 +574,7 @@ function computerAnswer(userChoice) {
 }
 
 /**
- * Function to play the game again 
+ * Play another round 
  */
 
 function restartGame() {
@@ -586,13 +614,53 @@ function restartGame() {
     document.getElementById('computer-spock').style.backgroundColor = '#D5E5FF'
     document.getElementById('computer-spock').style.borderColor = '#84B3FF'
 
-    // Start game again 
-    startGame(); 
+    // Start game again without prompt for name 
 
-}
+    // Turn on flashing game buttons 
+    buttonLightsOn();
+
+    // Remove the start button and initial game text
+    document.getElementById('start-btn').style.display = 'none';
+    document.getElementById('game-text').innerHTML = '';
+
+    // Delay one second each time and display countdown
+    sleep(100)
+        .then(() => document.getElementById('game-text').style.fontSize = '300%')
+        .then(() => document.getElementById('game-text').style.fontWeight = '300')
+        .then(() => document.getElementById('game-text').innerHTML = '3s')
+        .then(() => sleep(1000))
+        .then(() => document.getElementById('game-text').innerHTML = '2s')
+        .then(() => sleep(1000))
+        .then(() => document.getElementById('game-text').innerHTML = '1s')
+        .then(() => sleep(1000))
+        .then(() => document.getElementById('game-text').innerHTML = 'Make your choice!')
+        .then(() => buttonLightsOff())
+    
+    // Activate buttons 
+    const buttons = [
+        document.getElementById('rock'), 
+        document.getElementById('paper'),
+        document.getElementById('scissors'),
+        document.getElementById('lizard'),
+        document.getElementById('spock'),
+        document.getElementById('computer-rock'),
+        document.getElementById('computer-paper'),
+        document.getElementById('computer-scissors'),
+        document.getElementById('computer-lizard'),
+        document.getElementById('computer-spock'),
+    ]
+
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false; 
+    }
+
+    // Display previous round results 
+    document.getElementById('previous-results').style.display = 'flex';
+
+};
 
 /**
- * Function to increment the users score
+ * Increment the users score
  */
 
 function incrementUserScore() {
@@ -603,7 +671,7 @@ function incrementUserScore() {
 }
 
 /**
- * Function to increment the computers score
+ * Increment the computers score
  */
 
 function incrementComputerScore() {
