@@ -325,6 +325,18 @@ h1, h2, h3 {
     border: 3px solid var(--rock-light);
 }
 
+#rock, #computer-rock {
+    animation: blinkRock 1s infinite;
+}
+
+@keyframes blinkRock {
+    0%   { background-color: var(--rock-bright); border-color: var(--rock-light); }
+    25%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
+    50%  { background-color: var(--rock-bright); border-color: var(--rock-light); }
+    75%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
+    100% { background-color: var(--rock-bright); border-color: var(--rock-light); }
+}
+
 .paper {
     background-color: var(--paper-light);
     border: 3px solid var(--paper-bright);
@@ -332,10 +344,23 @@ h1, h2, h3 {
     top: -70px;
 }
 
+#paper, #computer-paper {
+    animation: blinkPaper 1s infinite;
+}
+
+@keyframes blinkPaper {
+    0%   { background-color: var(--paper-bright); border-color: var(--paper-light); }
+    25%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
+    50%  { background-color: var(--paper-bright); border-color: var(--paper-light); }
+    75%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
+    100% { background-color: var(--paper-bright); border-color: var(--paper-light); }
+}
+
 .paper:hover {
     background-color: var(--paper-bright);
     border: 3px solid var(--paper-light);
 }
+
 
 .paper-result {
     background-color: var(--paper-light);
@@ -352,6 +377,18 @@ h1, h2, h3 {
     border: 3px solid var(--scissors-bright);
 }
 
+#scissors, #computer-scissors {
+    animation: blinkScissors 1s infinite;
+}
+
+@keyframes blinkScissors {
+    0%   { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
+    25%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
+    50%  { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
+    75%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
+    100% { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
+}
+
 .scissors:hover {
     background-color: var(--scissors-bright);
     border: 3px solid var(--scissors-light);
@@ -362,6 +399,18 @@ h1, h2, h3 {
     border: 3px solid var(--lizard-bright);
 }
 
+#lizard, #computer-lizard {
+    animation: blinkLizard 1s infinite;
+}
+
+@keyframes blinkLizard {
+    0%   { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+    25%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    50%  { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+    75%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    100% { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+}
+
 .lizard:hover {
     background-color: var(--lizard-bright);
     border: 3px solid var(--lizard-light);
@@ -370,6 +419,18 @@ h1, h2, h3 {
 .spock {
     background-color: var(--spock-light);
     border: 3px solid var(--spock-bright);
+}
+
+#spock, #computer-spock {
+    animation: blinkSpock 1s infinite;
+}
+
+@keyframes blinkSpock {
+    0%   { background-color: var(--spock-bright); border-color: var(--spock-light); }
+    25%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    50%  { background-color: var(--spock-bright); border-color: var(--spock-light); }
+    75%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    100% { background-color: var(--spock-bright); border-color: var(--spock-light); }
 }
 
 .spock:hover {

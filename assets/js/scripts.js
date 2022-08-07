@@ -3,6 +3,9 @@
  */
 
  document.addEventListener("DOMContentLoaded", function() {
+
+    buttonLightsOff();
+
     let buttons = document.getElementsByTagName('button'); 
 
     for (let button of buttons) {
@@ -11,7 +14,7 @@
                 startGame(); 
             } else if (this.getAttribute('data-type') === 'game-choice') {
                 let userChoice = this.getAttribute('id');  
-                checkAnswer(userChoice);
+                computerAnswer(userChoice);
             } else if (this.getAttribute('data-type') === 'restart') {
                 restartGame();
             }
@@ -42,13 +45,19 @@
 
     document.addEventListener('keydown', function(event) {
         if (event.key === '1' ) {
-            checkAnswer('rock');
+            computerAnswer('rock');
         } else if (event.key === '2') {
-            checkAnswer('paper'); 
+            computerAnswer('paper'); 
+        } else if (event.key === '3') {
+            computerAnswer('scissors'); 
+        } else if (event.key === '4') {
+            computerAnswer('lizard'); 
+        } else if (event.key === '5') {
+            computerAnswer('spock'); 
         }
-    })
+    });
 
-})
+});
 
 /**
  * Sleep function for countdown
@@ -59,40 +68,61 @@ function sleep(ms) {
   }
 
 /**
+ * Prevent buttons flashing on load
+ */
+
+function buttonLightsOff() {
+
+    document.getElementById('rock').style.animation = 'none';
+    document.getElementById('paper').style.animation = 'none';
+    document.getElementById('scissors').style.animation = 'none';
+    document.getElementById('lizard').style.animation = 'none';
+    document.getElementById('spock').style.animation = 'none';
+    document.getElementById('computer-rock').style.animation = 'none';
+    document.getElementById('computer-paper').style.animation = 'none';
+    document.getElementById('computer-scissors').style.animation = 'none';
+    document.getElementById('computer-lizard').style.animation = 'none';
+    document.getElementById('computer-spock').style.animation = 'none';
+
+}
+
+/**
  * Light up the game buttons during countdown
  */
 
 function buttonLightsOn() { 
 
-    let frameCount = 10; 
+    document.getElementById('rock').style.animation = 'blinkRock 1s infinite';
+    document.getElementById('paper').style.animation = 'blinkPaper 1s infinite';
+    document.getElementById('scissors').style.animation = 'blinkScissors 1s infinite';
+    document.getElementById('lizard').style.animation = 'blinkLizard 1s infinite';
+    document.getElementById('spock').style.animation = 'blinkSpock 1s infinite';
+    document.getElementById('computer-rock').style.animation = 'blinkRock 1s infinite';
+    document.getElementById('computer-paper').style.animation = 'blinkPaper 1s infinite';
+    document.getElementById('computer-scissors').style.animation = 'blinkScissors 1s infinite';
+    document.getElementById('computer-lizard').style.animation = 'blinkLizard 1s infinite';
+    document.getElementById('computer-spock').style.animation = 'blinkSpock 1s infinite';
 
-    let brightColors = [
-        '#E999FF', 
-        '#FFE679',
-        '#FF8D8D', 
-        '#8CF68C',
-        '#84B3FF'
-    ];
+};
 
-    let lightColors = [
-        '#F6D6FF',
-        '#FEF6D4',
-        '#FFD6D6',
-        '#D8F3D8',
-        '#D5E5FF',
-        '#E9D4FC'
-    ];
-
-}
+/**
+ * Function to start the game - initiates a countdown, reduces
+ * the size of the main image and removes the "start" button
+ */
 
 function startGame() {
+
+    buttonLightsOn();
 
     // Remove the start button and initial game text
     document.getElementById('main-image').style.width = '40%';
     document.getElementById('start-btn').style.display = 'none';
     document.getElementById('game-text').innerHTML = '';
 
-    //Delay one second each time and display countdown
+    // Button colors light up 
+    //buttonLightsOn(); 
+
+    // Delay one second each time and display countdown
     sleep(100)
         .then(() => document.getElementById('game-text').style.fontSize = '300%')
         .then(() => document.getElementById('game-text').style.fontWeight = '300')
@@ -103,8 +133,32 @@ function startGame() {
         .then(() => document.getElementById('game-text').innerHTML = '1s')
         .then(() => sleep(1000))
         .then(() => document.getElementById('game-text').innerHTML = 'Make your choice!')
+        .then(() => buttonLightsOff())
     
+    // Activate buttons 
+    const buttons = [
+        document.getElementById('rock'), 
+        document.getElementById('paper'),
+        document.getElementById('scissors'),
+        document.getElementById('lizard'),
+        document.getElementById('spock'),
+        document.getElementById('computer-rock'),
+        document.getElementById('computer-paper'),
+        document.getElementById('computer-scissors'),
+        document.getElementById('computer-lizard'),
+        document.getElementById('computer-spock'),
+    ]
+
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].disabled = false; 
+    }
+
 };
+
+/**
+ * Function to display the user and computer choices, 
+ * and declare the winner 
+ */
 
 function displayWinner(userChoice, computerChoice) {  
 
@@ -368,7 +422,12 @@ function displayWinner(userChoice, computerChoice) {
 
 };
 
-function checkAnswer(userChoice) {
+/**
+ * Function to create the computers choice which is passed
+ * to the Display Winner function
+ */
+
+function computerAnswer(userChoice) {
 
     let choices = document.getElementsByClassName('computer-choices'); 
     var computerChoice = choices[Math.floor(Math.random() * choices.length)].getAttribute('data-type');
@@ -416,6 +475,10 @@ function checkAnswer(userChoice) {
 
 }
 
+/**
+ * Function to play the game again 
+ */
+
 function restartGame() {
 
     document.getElementById('display-results').style.display = 'none';
@@ -456,12 +519,20 @@ function restartGame() {
 
 }
 
+/**
+ * Function to increment the users score
+ */
+
 function incrementUserScore() {
 
     let oldScore = parseInt(document.getElementById('your-score').innerText); 
     document.getElementById('your-score').innerText = ++oldScore;
     
 }
+
+/**
+ * Function to increment the computers score
+ */
 
 function incrementComputerScore() {
 
