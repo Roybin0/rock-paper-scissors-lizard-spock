@@ -126,14 +126,11 @@ h1, h2, h3 {
     font-size: 150%;
 }
 
-#last-result {
-    display: none;
-}
-
 /* Main container style */ 
 
 #main-container {
     width: 100%;
+    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,11 +304,11 @@ h1, h2, h3 {
     --spock-light: #D5E5FF; 
     --start-light: #E9D4FC; 
 
-    --rock-bright: #E999FF; 
-    --paper-bright: #FFE679; 
-    --scissors-bright: #FF8D8D; 
-    --lizard-bright: #8CF68C; 
-    --spock-bright: #84B3FF; 
+    --rock-bright: #E480FF; 
+    --paper-bright: #FEDD5F; 
+    --scissors-bright: #FF8080; 
+    --lizard-bright: #89DC8B; 
+    --spock-bright: #81B2FA; 
     --start-bright: #C489FF; 
 }
 
@@ -330,11 +327,11 @@ h1, h2, h3 {
 }
 
 @keyframes blinkRock {
-    0%   { background-color: var(--rock-bright); border-color: var(--rock-light); }
-    25%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
-    50%  { background-color: var(--rock-bright); border-color: var(--rock-light); }
-    75%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
-    100% { background-color: var(--rock-bright); border-color: var(--rock-light); }
+    20%   { background-color: var(--rock-bright); border-color: var(--rock-light); }
+    40%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
+    60%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
+    80%  { background-color: var(--rock-light); border-color: var(--rock-bright); }
+    100% { background-color: var(--rock-light); border-color: var(--rock-bright); }
 }
 
 .paper {
@@ -349,11 +346,11 @@ h1, h2, h3 {
 }
 
 @keyframes blinkPaper {
-    0%   { background-color: var(--paper-bright); border-color: var(--paper-light); }
-    25%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
-    50%  { background-color: var(--paper-bright); border-color: var(--paper-light); }
-    75%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
-    100% { background-color: var(--paper-bright); border-color: var(--paper-light); }
+    20%   { background-color: var(--paper-light); border-color: var(--paper-bright); }
+    40%  { background-color: var(--paper-bright); border-color: var(--paper-light); }
+    60%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
+    80%  { background-color: var(--paper-light); border-color: var(--paper-bright); }
+    100% { background-color: var(--paper-light); border-color: var(--paper-bright); }
 }
 
 .paper:hover {
@@ -382,11 +379,11 @@ h1, h2, h3 {
 }
 
 @keyframes blinkScissors {
-    0%   { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
-    25%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
-    50%  { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
-    75%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
-    100% { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
+    20%   { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
+    40%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
+    60%  { background-color: var(--scissors-bright); border-color: var(--scissors-light); }
+    80%  { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
+    100% { background-color: var(--scissors-light); border-color: var(--scissors-bright); }
 }
 
 .scissors:hover {
@@ -404,11 +401,11 @@ h1, h2, h3 {
 }
 
 @keyframes blinkLizard {
-    0%   { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
-    25%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
-    50%  { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
-    75%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
-    100% { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+    20%   { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    40%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    60%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    80%  { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+    100% { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
 }
 
 .lizard:hover {
@@ -426,10 +423,10 @@ h1, h2, h3 {
 }
 
 @keyframes blinkSpock {
-    0%   { background-color: var(--spock-bright); border-color: var(--spock-light); }
-    25%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
-    50%  { background-color: var(--spock-bright); border-color: var(--spock-light); }
-    75%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    20%   { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    40%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    60%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    80%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
     100% { background-color: var(--spock-bright); border-color: var(--spock-light); }
 }
 
@@ -481,7 +478,6 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    position: absolute;
     bottom: 0;
 }
 
@@ -496,4 +492,25 @@ footer {
 
 #social-media a {
     color: #3a3a3a;
+}
+
+/* Previous results style */
+
+#previous-results {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#previous-results h3 {
+    font-size: 120%;
+}
+
+th, td {
+    padding: 0 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 120%;
 }
