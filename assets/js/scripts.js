@@ -17,6 +17,8 @@
                 computerAnswer(userChoice);
             } else if (this.getAttribute('data-type') === 'restart') {
                 restartGame();
+            } else if (this.getAttribute('data-type') === 'display-previous-results') {
+                displayPreviousResults();
             }
         });
     };
@@ -164,20 +166,18 @@ function startGame() {
 };
 
 /**
- * Use local storage to display results of last 
- * three rounds 
+ * Use local storage to display results of previous rounds
  */
 
 function previousResults(userChoice, computerChoice) {
 
     let table = document.getElementById('last-result'); 
     let rowCount = table.rows.length;
-    let row = table.insertRow(rowCount); 
-
-    let roundNumber = row.insertCell(0); 
-    let round = document.createElement('tr')
-    round.innerHTML = 'Round ' + rowCount; 
-    roundNumber.appendChild(round); 
+    let row = table.insertRow(1); 
+    let round = row.insertCell(0); 
+    let roundNumber = document.createElement('tr')
+    roundNumber.innerHTML = 'Round ' + rowCount; 
+    round.appendChild(roundNumber); 
 
     const buttons = [
         `<button class="result-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button>`,
@@ -215,7 +215,7 @@ function previousResults(userChoice, computerChoice) {
     userResults.innerHTML = userChoice; 
 
     let computerResults = row.insertCell(2); 
-    computerResults.innerHTML = computerChoice;     
+    computerResults.innerHTML = computerChoice;  
 
 };
 
@@ -509,7 +509,7 @@ function displayWinner(userChoice, computerChoice) {
     }
 
     // Display play again button 
-    document.getElementById('play-again').style.display = 'flex';
+    document.getElementById('play-again').style.display = 'flex';     
 
     // Save results to local storage 
     localStorage.setItem('user', JSON.stringify(userChoice));
@@ -519,8 +519,15 @@ function displayWinner(userChoice, computerChoice) {
 
 };
 
+function displayPreviousResults() {
+
+    document.getElementById('previous-results-button').style.display = 'none';
+    document.getElementById('previous-results-table').style.display = 'flex';
+}
+
 /**
  * Create random computer choice which is passed to the displayWinner function
+ * and highlight user and computer choices
  */
 
 function computerAnswer(userChoice) {
@@ -654,8 +661,8 @@ function restartGame() {
         buttons[i].disabled = false; 
     }
 
-    // Display previous round results 
-    document.getElementById('previous-results').style.display = 'flex';
+    // Activate previous round results button
+    document.getElementById('results-btn').disabled = false; 
 
 };
 
