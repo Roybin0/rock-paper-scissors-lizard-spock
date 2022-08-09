@@ -23,6 +23,8 @@
         });
     };
 
+    // Script for expanding menus from w3schools - see README for full details 
+
     var tab = document.getElementsByClassName('tab-links');
     var i;
 
@@ -62,7 +64,7 @@
 });
 
 /**
- * Sleep function for countdown
+ * Sleep function for countdown from James Hibbard on sitepoint.com - See README for full details 
  */
 
 function sleep(ms) {
