@@ -414,7 +414,7 @@ function displayWinner(userChoice, computerChoice) {
         resultText.innerHTML = results[2];
         incrementComputerScore();
     } else if (userChoice === 'spock' && computerChoice === 'rock')  {
-        userResultButton.innerHTML = buttonWin[2]; 
+        userResultButton.innerHTML = buttonWin[3]; 
         computerResultButton.innerHTML = buttonLose[0]; 
         winnerResult.innerHTML = userChoice; 
         loserResult.innerHTML = computerChoice; 

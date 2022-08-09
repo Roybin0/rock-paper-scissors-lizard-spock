@@ -109,29 +109,10 @@ h1, h2, h3 {
     padding-right: 50px;
 }
 
-/* Score container style */ 
-
-#score-container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.score-section {
-    font-size: 120%;
-    width: 30%;
-    text-align: center;
-}
-
-#total-score {
-    font-size: 150%;
-}
-
 /* Main container style */ 
 
 #main-container {
     width: 100%;
-    height: 800px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -280,6 +261,12 @@ h1, h2, h3 {
 
 /* Game area style */
 
+.score-section {
+    font-size: 120%;
+    width: 100%;
+    text-align: center;
+}
+
 .game-content {
     width: 30%;
     display: flex;
@@ -359,7 +346,6 @@ h1, h2, h3 {
     background-color: var(--paper-bright);
     border: 3px solid var(--paper-light);
 }
-
 
 .paper-result {
     background-color: var(--paper-light);
@@ -444,12 +430,12 @@ button {
 }
 
 .game-choices {
-    max-width: 470px;
-    min-height: 350px;
+    width: 470px;
+    height: 350px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    padding: 85px 20px 20px 20px;
+    padding: 85px 0px 20px 0px;
 
     border-radius: 10%;
     background-color: #e3f5ff;
@@ -469,15 +455,15 @@ button {
  
     box-shadow:  -6px -20px 35px #ffffff, -6px -10px 15px #ffffff, -20px 0px 30px #ffffff, 6px 20px 25px rgba(0,0,0,0.2);
     transition: .13s ease-in-out;
+    outline:none;
     cursor: pointer;
 
     padding: 25px 20px;
     border-radius: 50%;
-    
 }
 
 .game-icon:active {
-    box-shadow:none;
+    box-shadow: none;
 }
 
 /* Previous results style */
@@ -517,6 +503,7 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding-top: 20px;
 }
 
 #previous-results h3 {
@@ -572,4 +559,167 @@ footer {
 
 #social-media a {
     color: #3a3a3a;
+}
+
+/* Media queries */ 
+
+/* For larger to medium screens from 1385px and down */ 
+
+@media screen and (max-width: 1385px) {
+
+    .tab-content {
+        max-width: 100%;
+    }
+    
+    .game-content {
+        width: 35%;
+    }
+
+    #main-center {
+        width: 30%;
+    }
+
+    .display-choices p {
+        font-size: 80%;
+    }
+
+}
+
+/* For larger to medium screens from 1260px and down */
+
+@media screen and (max-width: 1260px) {
+
+    #start-btn {
+        font-size: 300%;
+    }
+
+    #main-container {
+        height: auto;
+        flex-direction: column;
+    }
+
+    .game-content {
+        width: 100%;
+    }
+
+    .game-choices {
+        height: auto;
+        width: 80%;
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    .paper {
+        top: 0;
+    }
+
+    #main-center { 
+        width: 100%;
+        padding-bottom: 20px;
+        justify-content: space-evenly;
+    }
+
+    #main-image {
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+    @keyframes blinkSpock {
+        20%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        40%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        60%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        80%  { background-color: var(--spock-bright); border-color: var(--spock-light); }
+        100% { background-color: var(--spock-light); border-color: var(--spock-bright); }
+    }
+
+    @keyframes blinkLizard {
+        20%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        40%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        60%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        80%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        100% { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+    }
+
+    #display-results {
+        width: 80%; 
+    }
+
+    #previous-results {
+        padding-top: 20px;
+    }
+}
+
+/* For larger to medium screens from 1200px and down */ 
+
+@media screen and (max-width: 1200px) {
+
+    #header-container {
+        flex-direction: column;
+    }
+
+    .header-content {
+        width: 40%;
+    }
+}
+
+/* For medium screens from 1100px and down */ 
+
+@media screen and (max-width: 1100px) {
+
+    #header-title {
+        width: 100%;
+    }
+    
+}
+
+/* For small to medium screens from 880px and down */
+
+@media screen and (max-width: 880px) {
+    .choices {
+        padding: 0px 25px;
+    }
+
+    @keyframes blinkSpock {
+        20%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        40%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        60%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        80%  { background-color: var(--spock-light); border-color: var(--spock-bright); }
+        100% { background-color: var(--spock-bright); border-color: var(--spock-light); }
+    }
+
+    @keyframes blinkLizard {
+        20%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        40%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        60%  { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+        80%  { background-color: var(--lizard-bright); border-color: var(--lizard-light); }
+        100% { background-color: var(--lizard-light); border-color: var(--lizard-bright); }
+    }
+    
+}
+
+/* For small to medium screens from 750px and down */
+
+@media screen and (max-width: 750px) {
+
+    .game-icon {
+        width: 100px;
+        height: 100px;
+     }
+
+    footer {
+        flex-direction: column;
+    }
+
+    #social-media {
+        padding: 0;
+    }
+}
+
+/* For small screens from 590px and down */
+
+@media screen and (max-width: 650px) {
+
+    .choices {
+        padding: 0px 10px;
+    }
 }
