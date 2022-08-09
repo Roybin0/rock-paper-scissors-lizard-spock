@@ -233,19 +233,19 @@ function displayWinner(userChoice, computerChoice) {
 
     // Create arrays of buttons, results and how user or computer has been beaten 
     const buttonWin = [
-        `<button class="game-icon rock"><i class="fa-regular fa-hand-back-fist fa-beat" style="--fa-beat-scale: 2.0"></i>Rock</button>`,
-        `<button class="game-icon paper-result"><i class="fa-regular fa-hand fa-beat" style="--fa-beat-scale: 2.0"></i>Paper</button>`,
-        `<button class="game-icon scissors"><i class="fa-regular fa-hand-scissors fa-beat" style="--fa-beat-scale: 2.0"></i>Scissors</button>`,
-        `<button class="game-icon spock"><i class="fa-regular fa-hand-spock fa-beat" style="--fa-beat-scale: 2.0"></i>Spock</button>`,
-        `<button class="game-icon lizard"><i class="fa-regular fa-hand-lizard fa-beat" style="--fa-beat-scale: 2.0"></i>Lizard</button>`,
+        `<button data-type="result" class="game-icon rock"><i class="fa-regular fa-hand-back-fist fa-beat" style="--fa-beat-scale: 2.0"></i>Rock</button>`,
+        `<button data-type="result" class="game-icon paper-result"><i class="fa-regular fa-hand fa-beat" style="--fa-beat-scale: 2.0"></i>Paper</button>`,
+        `<button data-type="result" class="game-icon scissors"><i class="fa-regular fa-hand-scissors fa-beat" style="--fa-beat-scale: 2.0"></i>Scissors</button>`,
+        `<button data-type="result" class="game-icon spock"><i class="fa-regular fa-hand-spock fa-beat" style="--fa-beat-scale: 2.0"></i>Spock</button>`,
+        `<button data-type="result" class="game-icon lizard"><i class="fa-regular fa-hand-lizard fa-beat" style="--fa-beat-scale: 2.0"></i>Lizard</button>`,
     ]
 
     const buttonLose = [
-        `<button class="game-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button>`,
-        `<button class="game-icon paper-result"><i class="fa-regular fa-hand"></i>Paper</button>`,
-        `<button class="game-icon scissors"><i class="fa-regular fa-hand-scissors"></i>Scissors</button>`,
-        `<button class="game-icon spock"><i class="fa-regular fa-hand-spock"></i>Spock</button>`,
-        `<button class="game-icon lizard"><i class="fa-regular fa-hand-lizard"></i>Lizard</button>`,
+        `<button data-type="result" class="game-icon rock"><i class="fa-regular fa-hand-back-fist"></i>Rock</button>`,
+        `<button data-type="result" class="game-icon paper-result"><i class="fa-regular fa-hand"></i>Paper</button>`,
+        `<button data-type="result" class="game-icon scissors"><i class="fa-regular fa-hand-scissors"></i>Scissors</button>`,
+        `<button data-type="result" class="game-icon spock"><i class="fa-regular fa-hand-spock"></i>Spock</button>`,
+        `<button data-type="result" class="game-icon lizard"><i class="fa-regular fa-hand-lizard"></i>Lizard</button>`,
     ]
 
     const howText = [
