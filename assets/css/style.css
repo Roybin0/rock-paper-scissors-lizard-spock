@@ -732,8 +732,26 @@ footer {
 
 @media screen and (max-width: 480px) {
 
+    #header-title {
+        font-size: 70%;
+    }
+
     .game-choices {
         width: 100%;
+        padding: 0;
+        flex-wrap: nowrap;
     }
+
+    .choices {
+        padding: 0 5px;
+    }
+
+    .game-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 100%;
+        box-shadow:  -6px -10px 15px #ffffff, -6px -10px 15px #ffffff, -10px 0px 15px #ffffff, 6px 10px 15px rgba(0,0,0,0.2);
+    }
+
 
 }
