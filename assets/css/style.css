@@ -701,6 +701,10 @@ footer {
 
 @media screen and (max-width: 750px) {
 
+    .header-content {
+        width: 80%;
+    }
+
     .game-icon {
         width: 100px;
         height: 100px;
@@ -722,4 +726,14 @@ footer {
     .choices {
         padding: 0px 10px;
     }
+}
+
+/* For small screens from 480px and down */ 
+
+@media screen and (max-width: 480px) {
+
+    .game-choices {
+        width: 100%;
+    }
+
 }
