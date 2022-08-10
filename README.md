@@ -237,6 +237,7 @@ My site was deployed via GitHub using the following steps:
 * A tutorial for the countdown from James Hibbard on sitepoint.com was used. Link to tutorial [here](https://www.sitepoint.com/delay-sleep-pause-wait/).
 * Expanding menu links were adapted with the help of w3schools. Link to tutorial [here](https://www.w3schools.com/howto/howto_js_collapsible.asp).
 * The shadowing of the game buttons was adapted from Anh on codepen.io. The source can be viewed [here](https://codepen.io/vladracoare/pen/jOPmMap).
+* The functions for incrementing scores have been adapted from code institute's Love Maths website. Link to code [here](    // Increment score code adapted from Code Institute's Love Maths tutorial - https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/blob/master/05-tidying-up/01-a-few-last-things/assets/js/script.js - See README for ful details).
 * Social media links in footer were adapted from Code Institute's Love Running website. Link to code [here](https://github.com/Code-Institute-Solutions/love-running-2.0-sourcecode/tree/main/06-site-footer/01-footer-main-structure).
  
 

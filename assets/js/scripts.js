@@ -23,7 +23,7 @@
         });
     };
 
-    // Script for expanding menus from w3schools - see README for full details 
+    // Script for expanding menus from w3schools - https://www.w3schools.com/howto/howto_js_collapsible.asp - see README for full details 
 
     var tab = document.getElementsByClassName('tab-links');
     var i;
@@ -64,7 +64,7 @@
 });
 
 /**
- * Sleep function for countdown from James Hibbard on sitepoint.com - See README for full details 
+ * Sleep function for countdown from James Hibbard on sitepoint.com - https://www.sitepoint.com/delay-sleep-pause-wait/ - See README for full details 
  */
 
 function sleep(ms) {
@@ -674,6 +674,8 @@ function restartGame() {
 
 function incrementUserScore() {
 
+    // Increment score code adapted from Code Institute's Love Maths tutorial - https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/blob/master/05-tidying-up/01-a-few-last-things/assets/js/script.js - See README for ful details
+
     let oldScore = parseInt(document.getElementById('your-score').innerText); 
     document.getElementById('your-score').innerText = ++oldScore;
     
@@ -684,6 +686,8 @@ function incrementUserScore() {
  */
 
 function incrementComputerScore() {
+
+    // Increment score code adapted from Code Institute's Love Maths tutorial - https://github.com/Code-Institute-Solutions/love-maths-2.0-sourcecode/blob/master/05-tidying-up/01-a-few-last-things/assets/js/script.js - See README for ful details    
 
     let oldScore = parseInt(document.getElementById('computer-score').innerText); 
     document.getElementById('computer-score').innerText = ++oldScore;
