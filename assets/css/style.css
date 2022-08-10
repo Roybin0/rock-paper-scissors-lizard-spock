@@ -713,7 +713,7 @@ footer {
      }
 
     footer {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     #social-media {
