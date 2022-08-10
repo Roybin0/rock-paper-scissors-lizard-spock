@@ -138,7 +138,7 @@ A section for both User and computer scores is visible underneath the header. Th
 
 After clicking the "Start" button, the User is prompted to enter their name. This is shown in the score section, and in the previous results section. If no name is entered, the website will simply use "Your score" instead. 
 
-![](https://roybin0.github.io/rock-paper-scissors-lizard-spock/assets/images/scores.png)
+![](https://roybin0.github.io/rock-paper-scissors-lizard-spock/assets/images/enter-name.png)
 
 ## Countdown
 
